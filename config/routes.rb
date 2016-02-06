@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+  scope "/admin" do
+      resources :users
+  end
   root 'store#index', as: 'store'
 
   resources :items, only: [:show, :index]
   resources :categories, only: [:show, :index]
   resources :users, only: [:show]
-  resources :carts
+  resources :carts, only: [:index, :show]
   resources :line_items, only: [:create]
   resources :orders, only: [:show]
 
