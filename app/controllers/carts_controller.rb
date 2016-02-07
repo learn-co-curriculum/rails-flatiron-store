@@ -15,7 +15,7 @@ class CartsController < ApplicationController
     current_user.current_cart=nil
     if @cart.save && current_user.save
       respond_to do |format|
-        format.html { redirect_to carts_path(@cart), notice: 'Thanks for your order!' }
+        format.html { redirect_to cart_path(@cart), notice: 'Thanks for your order!' }
       end
     end
   end

@@ -3,7 +3,7 @@
     <ul>
         <li> <%= link_to "Store Home", store_path %> </li>
         <% if user_signed_in? && !!current_cart %>
-          <li> <%= link_to "Cart", carts_path %></li>
+          <li> <%= link_to "Cart", cart_path(current_cart) %></li>
         <% end %>
     </ul>
 </nav>
